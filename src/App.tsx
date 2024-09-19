@@ -1,18 +1,34 @@
 import BasicComponent from "./component/BasicComponent";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
 import "./App.css";
 
-function App() {
+type AppProps = {
+  name: string;
+  age: number;
+  children?: ReactNode;
+};
+type obj = {
+  name: string;
+  age: number;
+};
+
+const App = ({ name, age }: AppProps): ReactNode => {
+  const [obj, setObj] = useState<obj>();
+
   return (
-    <div className="wrapper">
-      <div className="text">One</div>
-      <div className="text">Two</div>
-      <div className="text">Three</div>
-      <div className="text">Four</div>
-      <div className="text">Five</div>
-    </div>
+    <>
+      <button onClick={() => setObj({ name: "pizza", age: 21 })}>
+        click me!
+      </button>
+      {obj && (
+        <div>
+          <div className="name">{`Name: ${obj?.name}`}</div>
+          <div className="age">{`Age:${obj?.age}`}</div>
+        </div>
+      )}
+    </>
   );
-}
+};
 
 export default App;

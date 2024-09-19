@@ -1,4 +1,33 @@
 .wrapper {
+  width: 100%;
+  height: 800px;
   display: grid;
-  grid-template-columns: 200px 200px 200px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+
+  /* grid-template-columns: 20px repeat(3, 1fr) 20px; */
+  /* grid-template-columns: 500px 1fr 2fr; */
+  background-color: lightblue;
+}
+
+.box1 {
+  grid-column: 1/4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  z-index: 3;
+  background-color: lightgreen;
+}
+.box2 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  z-index: 2;
+  background-color: lightcoral;
+}
+
+.text {
+  background-color: pink;
+  border: 1px solid black;
+  height: auto;
 }
