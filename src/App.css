@@ -26,8 +26,50 @@
   background-color: lightcoral;
 }
 
-.text {
-  background-color: pink;
-  border: 1px solid black;
-  height: auto;
+.layout {
+  margin: auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.numberDisplay {
+  background-color: gray;
+  display: flex;
+  justify-content: flex-end;
+  height: 50px;
+  span {
+    color: white;
+    font-size: 36px;
+    margin: 10px 0;
+  }
+}
+
+.keyboard {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin-top: 10px;
+}
+
+.button {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttonGray {
+  background-color: #ccc;
+}
+
+.buttonBlue {
+  background-color: aqua;
+}
+
+.buttonRed {
+  background-color: #df2698;
 }
